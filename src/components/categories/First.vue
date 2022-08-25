@@ -18,7 +18,7 @@
             </td>
             <td>
               {{ user.title }}
-            </td>
+            </td> 
             <td>
               {{ user.body }}
             </td>
