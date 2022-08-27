@@ -1,19 +1,21 @@
 <template>
-  <div id="first">
+  <div id="first" class="bg-light bg-gradient">
     <div class="container">
- 
-
-      <table class="table align-middle mb-0 bg-light shadow-lg rounded-6 ">
+      <h1 class="pt-3">Bo'lim 1</h1>
+<button class="btn btn-success my-4 d-flex justify-content-center align-items-center gap-2" @click="back">qaytish <i class="fas fa-caret-left " style="font-size: 18px;"></i></button>
+      <table class="table align-middle mb-0 bg-light shadow-lg"  >
         <thead class="bg-light">
-          <tr>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Status</th>
+          <tr class="bg-grayish text-white bg-gradient ">
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+            
           </tr>
         </thead>
         <tbody>
           <tr v-for="user in users" :key="user.id">
-            <td>
+            <td scope="row">
               {{ user.id }}
             </td>
             <td>
@@ -22,7 +24,7 @@
             <td>
               {{ user.body }}
             </td>
-            <td class="d-flex gap-2">
+            <td class="d-flex gap-2  align-items-center pt-5 border-0">
 
 <router-link :to="{name:'edit', params:{id:user.id}}" class="btn btn-warning d-flex justify-content-between align-items-center gap-2"> <i class="fas fa-pen"></i>edit</router-link>
 
@@ -42,9 +44,10 @@
 
 <script setup>
 import zapros from "../../reusableFunctions/getData";
+import { useRouter } from "vue-router";
 import {  useStore } from "vuex";
 const { users, getInfo } = zapros();
-
+const router = useRouter()
 console.log(getInfo(), users);
 let Store = useStore()
 let deleteUser = (id)=>{
@@ -57,10 +60,17 @@ if(users.value[id].id-1 == id){
 }
 
 
+let back = ()=> {
+  router.go(-1)
+}
+
+
+
+
 </script>
 
 <style lang="scss" scoped>
 #first {
-  height: 100vh;
+
 }
 </style> 

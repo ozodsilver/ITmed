@@ -5,21 +5,25 @@ import Home from './components/HomeComp.vue'
 
 
 
-<template>
+<template id ='app'>
 <RouterView></RouterView>
 </template>
 
-<style>
-
-html{
-  height: 100%;
-}
-body{
-  height: 100%;
-background: rgb(38,191,0);
-background: linear-gradient(35deg, rgba(38,191,0,0.5347515715270483) 0%, rgba(255,122,122,0.24063392446822474) 77%);
+<style lang="scss" >
 
 
-}
 
+
+
+
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 </style>

@@ -4,6 +4,7 @@ import Auth from '../components/Authorization.vue'
 import Home from '../components/HomeComp.vue'
 import First from '../components/categories/First.vue'
 import EditUser from '../components/EditUser.vue'
+import AddInfo from '../components/AddInfo.vue'
 const routes = [
     {
         path:'/',
@@ -27,6 +28,11 @@ const routes = [
         component:EditUser,
         props:true
 
+    },
+    {
+        path:'/addInfo',
+        name:'addInfo',
+        component:AddInfo
     }
 ]
 
