@@ -2,7 +2,7 @@
   <div id="post">
     <div class="container p-3">
       <h1 class="my-4 text-muted">bo'limni tanlang</h1>
-      <Multiselect v-model="value" :options="options" placeholder="sds" />
+      <Multiselect v-model="value" :options="options" placeholder="bo'limni tanlash" />
       <div class="row">
         <div class="col-6 mt-4">
           <label for="ism">Ism kiriting</label>
@@ -144,7 +144,7 @@
             "
             @click="back"
           >
-            qaytish <i class="fas fa-angle-left"></i>
+            bo'limlar <i class="fas fa-angle-left"></i>
           </button>
           <button
             class="
@@ -194,7 +194,7 @@ export default {
 #post {
 background: rgb(255,255,255);
 background: linear-gradient(184deg, rgba(255,255,255,0.9521185183057598) 0%, rgba(178,178,178,0.4227067535998774) 77%);
-  height: 100vh;
+
 }
 
 @import "@vueform/multiselect/themes/default.css";

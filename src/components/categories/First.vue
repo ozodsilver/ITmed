@@ -2,7 +2,13 @@
   <div id="first" class="bg-light bg-gradient">
     <div class="container">
       <h1 class="pt-3">Bo'lim 1</h1>
-<button class="btn btn-success my-4 d-flex justify-content-center align-items-center gap-2" @click="back">qaytish <i class="fas fa-caret-left " style="font-size: 18px;"></i></button>
+<button class="btn btn-success my-4 d-flex justify-content-center align-items-center gap-2" @click="back">bo'limlar <i class="fas fa-caret-left " style="font-size: 18px;"></i></button>
+<div class="d-flex justify-content-center" v-if="load">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+</div>
       <table class="table align-middle mb-0 bg-light shadow-lg"  >
         <thead class="bg-light">
           <tr class="bg-grayish text-white bg-gradient ">
@@ -46,11 +52,22 @@
 import zapros from "../../reusableFunctions/getData";
 import { useRouter } from "vue-router";
 import {  useStore } from "vuex";
-const { users, getInfo } = zapros();
-const router = useRouter()
-console.log(getInfo(), users);
+import {ref} from 'vue'
 let Store = useStore()
+
+
+const { users, getInfo, load } = zapros();
+
+const router = useRouter()
+
+console.log(getInfo(), users, load);
+
+
 let deleteUser = (id)=>{
+
+
+
+
 if(users.value[id].id-1 == id){
    users.value.splice(id,1)
    console.log(users.value[id].id-1)
