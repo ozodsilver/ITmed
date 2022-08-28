@@ -62,7 +62,7 @@ const router = useRouter()
 
 console.log(getInfo(), users, load);
 
-
+ 
 let deleteUser = (id)=>{
 
 
