@@ -62,16 +62,13 @@ const Login = async(e) => {
  
 
   let response = await axios.post(
-      `https://itmed.herokuapp.com/api/Auth?login=${login}&pass=${password}`
-    ).then(el => {
-      console.log(el)
-    });
+      `https://itmed.herokuapp.com/api/Auth?login=${login}&pass=${password}`)
 
-//     console.log(response)
+if(response.data){
+  localStorage.setItem('jwt', response.data)
+  router.push({name:'home'})
+}
 
-// response.data.forEach(el => {
-// console.log(el)
-// })
 };
 </script>
 

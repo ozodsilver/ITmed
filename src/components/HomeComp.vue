@@ -3,24 +3,24 @@
 <div class="container d-flex p-2 align-items-center" style="height:100vh">
 
 <div class="container p-4">
-      <div class="w-50 m-auto shadow-lg bg-light h-75 p-5 rounded-8" style="height: 90vh !important;">
+      <div class="w-50 m-auto shadow-lg h-75 p-5 rounded-8"  id="glass">
 <h2 class="text-dark fw-bold text-center pt-0  pb-4 text-muted">BO'LIMLAR</h2>
 <div class="w-100 layout">
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya</router-link>
-<router-link :to="{name:'second'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Xirurgiya</router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Pulmonologiya</router-link>
+<router-link :to="{name:'second'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Allergeologiya</router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Gematologiya </router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Nevrologiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Gastroenterologiya </router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Chaqaloqlar patologiyasi bo'limi </router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Chala tug'ilgan chaqaloqlar bo'limi </router-link>
+<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Neonatal Reanimatsiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
 
 </div>
-<router-link :to="{name:'addInfo'}" class="btn btn-primary bg-gradient d-flex justify-content-center gap-3 align-items-center my-4 w-100 d-block">barcha bo'limlarga malumot qo'shish <i class="fas fa-plus-circle fs-5"></i></router-link>
+<router-link :to="{name:'addInfo'}" class="btn btn-grayish bg-gradient d-flex justify-content-center gap-3 align-items-center my-4 w-100 d-block">barcha bo'limlarga malumot qo'shish <i class="fas fa-plus-circle fs-5"></i></router-link>
 
   <button @click="$router.go(-1)" class="btn btn-danger w-50 mt-3 d-flex justify-content-center align-items-center gap-2"><i class="fas fa-arrow-circle-left "></i>log out </button>
   </div>
@@ -53,12 +53,26 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     position: relative;
     z-index: 2227;
     font-family: 'Righteous', cursive;
+    a{
+       text-transform: capitalize;
+       font-size:1em ;
+font-family: 'Comfortaa', cursive;
+    }
 }
 
 h2{
       font-family: 'Rubik Dirt', cursive;
 }
 
-
+#glass{
+            backdrop-filter: blur(1px) saturate(200%);
+    -webkit-backdrop-filter: blur(1px) saturate(200%);
+  
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 </style>
