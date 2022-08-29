@@ -2,9 +2,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Auth from '../components/Authorization.vue'
 import Home from '../components/HomeComp.vue'
-import First from '../components/categories/First.vue'
 import EditUser from '../components/EditUser.vue'
 import AddInfo from '../components/AddInfo.vue'
+
+// bo'limlar
+import First from '../components/categories/First.vue'
+import Second from  '../components/categories/Second.vue'
 const routes = [
     {
         path:'/',
@@ -22,6 +25,19 @@ const routes = [
         name:'first',
         component:First
     },
+    {
+        path:'/second',
+        name:'second',
+        component: Second
+    },
+
+
+
+
+
+
+
+    // edit va addInfo
     {
         path:'/edit/:id',
         name:'edit',

@@ -4,12 +4,12 @@
       <Transition name="bounce">
       <div class="card text-center w-50 m-auto shadow-lg p-3 py-5" v-if="show">
         <img
-          src="https://ssv.uz/assets/public/images/logo.svg"
+          src="../assets/logo.jpg"
           alt=""
           class="card-img-top w-25 m-auto d-block"
         />
         <div class="card-header ">
-          O'zbekiston Respublikasi so'gliqni saqlash vazirligi
+        Samarqand Viloyat bolalar ko'p tarmoqli tibbiyot markazi
         </div>
         <div class="card-body">
           <form>
@@ -39,7 +39,7 @@
             </button>
           </form>
         </div>
-        <div class="card-footer text-muted p-2">tashrif buyurilgan vaqt</div>
+       
       </div>
     </Transition>
     </div>
@@ -48,22 +48,30 @@
 </template>
 
 <script setup>
+  import axios from 'axios'
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 let show = ref(true)
 const router = useRouter();
-const isOpen = ref(true);
-const Login = (e) => {
+
+const Login = async(e) => {
   e.preventDefault();
 
-  let login = document.querySelector("#login");
-  let password = document.querySelector("#password");
-  let kirish = document.querySelector("#kirish");
+  let login = document.querySelector("#login").value;
+  let password = document.querySelector("#password").value;
+ 
 
-  if (login.value == "admin" && password.value == "admin") {
-    router.push({ name: "home" });
-    console.log(router);
-  } 
+  let response = await axios.post(
+      `https://itmed.herokuapp.com/api/Auth?login=${login}&pass=${password}`
+    ).then(el => {
+      console.log(el)
+    });
+
+//     console.log(response)
+
+// response.data.forEach(el => {
+// console.log(el)
+// })
 };
 </script>
 

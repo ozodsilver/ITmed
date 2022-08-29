@@ -7,7 +7,7 @@
 <h2 class="text-dark fw-bold text-center pt-0  pb-4 text-muted">BO'LIMLAR</h2>
 <div class="w-100 layout">
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya</router-link>
-<router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Xirurgiya</router-link>
+<router-link :to="{name:'second'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Xirurgiya</router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
 <router-link :to="{name:'first'}" class="btn btn-success bg-gradient d-flex justify-content-center align-items-center">Kardiologiya </router-link>
