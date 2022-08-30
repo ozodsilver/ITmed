@@ -78,7 +78,7 @@
          urologiya
         </option>
 
-          <option value="neonotal">
+          <option value="neonotalX">
          neonotal xirurgiya
         </option>
 

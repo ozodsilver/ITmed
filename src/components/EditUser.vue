@@ -5,10 +5,10 @@
         Tahrirlash <i class="fas fa-pencil-alt fs-4"></i>
       </h1>
 
-      <table class="table table-dark align-middle">
-<thead>
-  <tr>
-  <th>Nomer</th>
+      <table class="table table-dark align-middle rounded-9">
+<thead >
+  <tr >
+  <th class="rounded-9">Nomer</th>
   <th>Ism</th>
   <th>Familiya</th>
   <th>Otasining ismi</th>
@@ -16,7 +16,7 @@
   <th>Tug'ilgan sana</th>
   <th>Shifokor</th>
   <th>Diagnostika</th>
-  <th>Bo'lim</th>
+  <th class="rounded-9">Bo'lim</th>
 
 </tr>
 </thead>

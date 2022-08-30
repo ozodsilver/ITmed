@@ -55,7 +55,7 @@
               >Nevrologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'kardiologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -66,7 +66,7 @@
               >Kardiologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'gastrointerologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -77,7 +77,7 @@
               >Gastroenterologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'chPotologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -88,7 +88,7 @@
               >Chaqaloqlar patologiyasi bo'limi
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'chalaPotologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -99,7 +99,7 @@
               >Chala tug'ilgan chaqaloqlar bo'limi
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'neonotalReonimatsiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -110,7 +110,7 @@
               >Neonatal Reanimatsiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'reanimatsiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -121,7 +121,7 @@
               >Reanimatsiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'erta' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -132,7 +132,7 @@
               >Erta yosh bolalar patologiyasi
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'otoloringologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -143,7 +143,7 @@
               >Otoloringologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'neyroxirurgiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -154,7 +154,7 @@
               >Neyroxirurgiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'yujj' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -165,7 +165,7 @@
               >YUJJ
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'yiringliXirurgiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -176,7 +176,7 @@
               >Yiringli xirurgiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'ginekologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -187,7 +187,7 @@
               >ginekologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'rejali' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -198,7 +198,7 @@
               >Rejali xirurgiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'urologiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -209,7 +209,7 @@
               >Urologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'NeonotalXirurgiya' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -220,7 +220,7 @@
               >Neonotal xirurgiya</router-link
             >
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'ortopediya1' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -231,7 +231,7 @@
               >Ortopediya-1</router-link
             >
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'ortopediya2' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -242,7 +242,7 @@
               >Ortopediya-2</router-link
             >
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'kardioxirurgiya' }"
               class="
                 btn btn-success
                 bg-gradient

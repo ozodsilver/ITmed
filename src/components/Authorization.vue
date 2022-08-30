@@ -69,7 +69,7 @@ const Login = async(e) => {
   let login = document.querySelector("#login").value;
   let password = document.querySelector("#password").value;
 
-if(login !== 'admin' || password !== 'admin'){
+if(login !== 'AZIZOV' || password !== 'AZIZOV52'){
     show.value = true
 }else{
   show.value = false
