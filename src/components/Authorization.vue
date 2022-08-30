@@ -2,7 +2,7 @@
   <div id="auth">
     <div class="container">
     
-      <div class="card text-center w-50 m-auto shadow-lg p-3 py-5" >
+      <div class="card text-center w-50 m-auto shadow-lg p-3 py-5 border" >
         <img
           src="../assets/logo.jpg"
           alt=""
@@ -35,7 +35,7 @@
               id="kirish"
             >
               kirish
-              <i class="fas fa-sign-in-alt"></i>
+              <i class="fas fa-sign-in-alt" id="kirish"></i>
             </button>
           </form>
         </div>
@@ -106,6 +106,15 @@ background-size: contain;
  
   background-position: center;
 
+}
+
+#kirish{
+  transition: .5s linear;
+  
+}
+
+.btn:hover #kirish{
+  transform: translateX(20px) scale(1.5);
 }
 }
 
