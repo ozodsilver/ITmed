@@ -25,7 +25,7 @@
       </form>
   
  
-        <h1 class="pt-3">Pulmonologiya</h1>
+        <h1 class=" badge bg-grayish p-3 d-flex align-items-center">Pulmonologiya</h1>
         <div class="d-flex justify-content-center" v-if="load"></div>
       </div>
 
