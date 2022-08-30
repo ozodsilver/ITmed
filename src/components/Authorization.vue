@@ -1,8 +1,8 @@
 <template>
   <div id="auth">
     <div class="container">
-      <Transition name="bounce">
-      <div class="card text-center w-50 m-auto shadow-lg p-3 py-5" v-if="show">
+    
+      <div class="card text-center w-50 m-auto shadow-lg p-3 py-5" >
         <img
           src="../assets/logo.jpg"
           alt=""
@@ -41,7 +41,15 @@
         </div>
        
       </div>
-    </Transition>
+  
+  <Transition name="bounce">
+<div class="badge bg-danger p-5 w-75 m-auto d-block position-relative" v-if="show">
+<i class="far fa-times-circle text-white fs-2" style="cursor:pointer; position:absolute; top:10px; right:20px" @click="show = !show"></i>
+  <h4>Login yoki parol xato</h4>
+</div>
+</Transition>
+
+
     </div>
 
   </div>
@@ -51,25 +59,36 @@
   import axios from 'axios'
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-let show = ref(true)
+let show = ref(false)
 const router = useRouter();
 
 const Login = async(e) => {
   e.preventDefault();
 
+
   let login = document.querySelector("#login").value;
   let password = document.querySelector("#password").value;
- 
+
+if(login !== 'admin' || password !== 'admin'){
+    show.value = true
+}else{
+  show.value = false
+}
 
   let response = await axios.post(
       `https://itmed.herokuapp.com/api/Auth?login=${login}&pass=${password}`)
+
 
 if(response.data){
   localStorage.setItem('jwt', response.data)
   router.push({name:'home'})
 }
 
+
 };
+
+
+
 </script>
 
 <style lang="scss" scoped>

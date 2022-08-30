@@ -1,96 +1,121 @@
 <template>
     <div id="edit">
-        <div class="container p-3">
-      <h1 class="my-4 text-muted">Tahrirlash</h1>
-      
+      <div class="container p-3">
+      <h1 class="my-4 text-muted">Tahrirlash <i class="fas fa-pencil-alt fs-4"></i></h1>
       <div class="row">
-        <div class="col-6 mt-4">
-          <label for="ism">Ism kiriting</label>
+
+
+   <div class="col-6 mt-4">
+          <label for="ism">number:</label>
           <input
             type="text"
             name=""
             id="ism"
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="number:"
+            v-model="number"
+          />
+        </div>
+
+
+
+
+        <div class="col-6 mt-4">
+          <label for="ism">Ism:</label>
+          <input
+            type="text"
+            name=""
+            id="ism"
+            class="form-control"
+            placeholder="ism kiriting:"
+            v-model="ism"
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">familya</label>
+          <label for="">familiya:</label>
           <input
             type="text"
             name=""
             id=""
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="familiya"
+            v-model="familiya"
           />
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">Ism kiriting</label>
+          <label for="ism">otasining ismi:</label>
           <input
             type="text"
             name=""
             id="ism"
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="sharif"
+            v-model="sharif"
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">familya</label>
+          <label for="">address</label>
           <input
             type="text"
             name=""
             id=""
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="address"
+            v-model="address"
           />
         </div>
 
+    
         <div class="col-6 mt-4">
-          <label for="ism">Ism kiriting</label>
-          <input
-            type="text"
-            name=""
-            id="ism"
-            class="form-control p-2"
-            placeholder="ism kiriting"
-          />
-        </div>
-        <div class="col-6 mt-4">
-          <label for="">familya</label>
+          <label for="">tugilgan sana</label>
           <input
             type="text"
             name=""
             id=""
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="example 03.05.1977"
+            v-model="sana"
           />
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">Ism kiriting</label>
+          <label for="ism">doctor</label>
           <input
             type="text"
             name=""
             id="ism"
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            class="form-control"
+            placeholder="doctor"
+            v-model="doctor"
           />
         </div>
-       
-
         <div class="col-6 mt-4">
-          <label for="ism">Ism kiriting</label>
+          <label for="">diagnostica</label>
           <input
             type="text"
             name=""
-            id="ism"
-            class="form-control p-2"
-            placeholder="ism kiriting"
+            id=""
+            class="form-control"
+            placeholder="diagnostika"
+            v-model="diagnostica"
+          />
+        </div>
+
+
+        <div class="col-6 mt-4">
+          <label for="">bo'lim</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="bo'lim"
+            v-model="bulim"
           />
         </div>
       
-
+      
       
         <div class="col-12 d-flex justify-content-between ">
           <button
@@ -119,8 +144,10 @@
               justify-content-center
               align-items-center
             "
+
+            @click="addPost"
           >
-            Tahrirlash <i class="fas fa-plus-circle"></i>
+            joylash <i class="fas fa-plus-circle"></i>
           </button>
         </div>
       </div>
@@ -129,14 +156,29 @@
 </template>
 
 <script setup>
-
+import axios from 'axios';
     import { useRouter } from 'vue-router';
     import { defineProps } from 'vue';
     import { onMounted } from 'vue';
-
+import { ref } from 'vue';
     const props = defineProps({
         id:String
     })
+let number = ref('')
+let ism = ref('')
+let familiya = ref('')
+let sharif = ref('')
+let address = ref('')
+let sana = ref('')
+let doctor = ref('')
+let diagnostica = ref('')
+let bulim = ref('')
+
+
+
+ 
+
+
 
 onMounted( () =>{
     console.log(props.id)
@@ -148,6 +190,36 @@ onMounted( () =>{
 
     let back = ()=>{
         router.go(-2)
+    }
+
+
+    
+
+
+    let editUser = ()=>{
+let response = axios.patch(`https://itmed.herokuapp.com/api/Discharges`, {
+  id:props.id,
+  number:number,
+        firstName:ism,
+        lastName:familiya,
+        fatherName:sharif,
+        address:address,
+        birthday:sana,
+        doctor:doctor,
+        diagnosis:diagnostica,
+        department:bulim
+
+},
+{
+  headers: {
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+    'Content-Type': 'application/json'
+  }
+}
+
+)
+
+
     }
 
 </script>
