@@ -11,7 +11,7 @@
             align-items-center
             gap-2
           "
-          @click="back"
+          @click="back" 
         >
           bo'limlar <i class="fas fa-caret-left" style="font-size: 18px"></i>
         </button>
@@ -202,6 +202,8 @@
         </tbody>
       </table>
     </div>
+
+   
   </div>
 </template>
 

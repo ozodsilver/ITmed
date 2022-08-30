@@ -177,6 +177,9 @@
         </div>
       </div>
     </div>
+    <div class="badge bg-success p-5 w-50 m-auto d-block" v-if="success">
+<h3>Malumotlar tahrirlandi! <i class="fas fa-check-double"></i> </h3>
+    </div>
   </div>
 </template>
 
@@ -189,6 +192,8 @@ import { ref } from "vue";
 const props = defineProps({
   id: String,
 });
+
+let success = ref(false)
 
 let natija = ref([])
 let id = +props.id;
@@ -214,7 +219,11 @@ onMounted(async () => {
     }
   );
   console.log(res);
-  
+
+
+ 
+
+
   natija.value.push(res.data)
   
 });
@@ -251,6 +260,14 @@ let editUser = async () => {
     }
   );
 
+
+  setTimeout(() => {
+    success.value = true
+  }, 10);
+
+  setTimeout(() => {
+    success.value = false
+  }, 3000);
   console.log(response);
 };
 </script>

@@ -4,10 +4,11 @@ import Auth from '../components/Authorization.vue'
 import Home from '../components/HomeComp.vue'
 import EditUser from '../components/EditUser.vue'
 import AddInfo from '../components/AddInfo.vue'
-
+import Nevrologiya from '../components/categories/Nevrologiya.vue'
 // bo'limlar
 import First from '../components/categories/First.vue'
 import Second from  '../components/categories/Second.vue'
+import Third from '../components/categories/Third.vue'
 const routes = [
     {
         path:'/',
@@ -29,6 +30,18 @@ const routes = [
         path:'/second',
         name:'second',
         component: Second
+    },
+
+    {
+        path:'/third',
+        name:'third',
+        component: Third
+    },
+
+    {
+        path:'/nevrologiya',
+        name:'nevrologiya',
+        component: Nevrologiya
     },
 
 

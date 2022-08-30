@@ -33,7 +33,7 @@
               >Allergeologiya</router-link
             >
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'third' }"
               class="
                 btn btn-success
                 bg-gradient
@@ -44,7 +44,7 @@
               >Gematologiya
             </router-link>
             <router-link
-              :to="{ name: 'first' }"
+              :to="{ name: 'nevrologiya' }"
               class="
                 btn btn-success
                 bg-gradient
