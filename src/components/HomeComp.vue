@@ -15,6 +15,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -26,6 +27,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -37,6 +39,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -48,6 +51,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -59,6 +63,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -70,6 +75,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -81,6 +87,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -92,6 +99,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -103,6 +111,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -114,6 +123,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -125,6 +135,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -136,6 +147,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -147,6 +159,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -158,6 +171,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -169,6 +183,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -181,6 +196,7 @@
                 btn btn-success
                 bg-gradient
                 d-flex
+                btn-rounded
                 justify-content-center
                 align-items-center
               "
@@ -191,6 +207,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -203,6 +220,7 @@
                 btn btn-success
                 bg-gradient
                 d-flex
+                btn-rounded
                 justify-content-center
                 align-items-center
               "
@@ -216,6 +234,7 @@
                 d-flex
                 justify-content-center
                 align-items-center
+                rounded-pill
               "
               >Neonotal xirurgiya</router-link
             >
@@ -224,6 +243,8 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -235,6 +256,7 @@
               class="
                 btn btn-success
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 align-items-center
@@ -247,6 +269,7 @@
                 btn btn-success
                 bg-gradient
                 d-flex
+                btn-rounded
                 justify-content-center
                 align-items-center
               "
@@ -258,6 +281,7 @@
               @click="$router.go(-1)"
               class="
                 btn btn-danger
+                btn-rounded
                 w-25
                 d-flex
                 justify-content-center
@@ -272,6 +296,7 @@
               class="
                 btn btn-primary
                 bg-gradient
+                btn-rounded
                 d-flex
                 justify-content-center
                 gap-3

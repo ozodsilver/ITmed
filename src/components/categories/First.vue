@@ -1,10 +1,12 @@
 <template>
   <div id="first" class="bg-light bg-gradient">
     <div class="container-fluid">
-      <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex d-inline-block justify-content-between gap-1 align-items-center ">
         <button
           class="
             btn btn-success
+            btn-sm
+            btn-rounded
             my-4
             d-flex
             justify-content-center
@@ -13,19 +15,20 @@
           "
           @click="back" 
         >
-          bo'limlar <i class="fas fa-caret-left" style="font-size: 18px"></i>
+          <span id="bulimlar">bo'limlar </span> <i class="fas fa-caret-left" style="font-size: 18px"></i>
         </button>
 
     
-      <form class="w-75 d-flex justify-content-center gap-2">
- <input type="text" placeholder="Ism" class="p-1 form-control w-25"  v-model="searchText">
-           <input type="text" placeholder="familiya" class="p-1 form-control w-25"  v-model="searchText2">
+      <form class="w-100 d-flex justify-content-center gap-2">
+        <input type="text" class="form-control" placeholder="number" v-model="number" style="width:80px">
+ <input type="text" placeholder=" Ism" class="p-1 p-sm-0 form-control w-50"  v-model="searchText">
+           <input type="text" placeholder="familiya" class="p-1 form-control w-50"  v-model="searchText2">
 
-           <button class="btn btn-success" @click="Search" data-mdb-toggle="modal" data-mdb-target="#exampleModal"> <i class="fas fa-search fsz-3"></i> </button>
+           <button class="btn btn-sm  btn-success" @click="Search" data-mdb-toggle="modal" data-mdb-target="#exampleModal"> <i class="fas fa-search fsz-3"></i> </button>
       </form>
   
  
-        <h1 class=" badge bg-grayish p-3 d-flex align-items-center">Pulmonologiya</h1>
+        <h1 class=" badge bg-grayish py-2 mt-2   d-flex align-items-center" id="bulim">Pulmonologiya</h1>
         <div class="d-flex justify-content-center" v-if="load"></div>
       </div>
 
@@ -44,41 +47,45 @@
       </div>
       <div class="modal-body">
 
-
-  <table class="table align-middle  w-100" v-if="searchShow"  style="table-layout: fixed; width: 100%">
+<div class="table-responsive table-responsive-sm">
+  <table class="table align-middle table-hover table-dark table-striped w-100 " v-if="searchShow"  style=" width: 100%; ">
        
-  <thead>
-    <tr class="bg-grayish text-white">
-      <th scope="col">#</th>
+       <thead>
+         <tr class="bg-light text-white">
+           <th scope="col">#</th>
+           <th scope="col">Ism</th>
+           <th scope="col">Familiya</th>
+           <th scope="col">Sharif</th>
+           <th scope="col">bulim</th>
+           <th scope="col">Adress</th>
+           <th scope="col">Tug'ilgan kun</th>
+           <th scope="col">Doctor</th>
+         
+           <th scope="col">Diagnostika</th>
+           <th scope="col">MKB 10</th>
+          
+         </tr>
+       </thead>
+       <tbody>
+         <tr v-for="list in searchList " :key="list.id" class=" text-white">
+          <td style="word-wrap: break-word" >{{list.number}}</td>
+           <td style="word-wrap: break-word">{{list.firstName}}</td>
+           <td style="word-wrap: break-word">{{list.lastName}}</td>
+           <td style="word-wrap: break-word">{{list.fatherName}}</td>
+           <td style="word-wrap: break-word">{{list.department}}</td>
+           <td style="word-wrap: break-word">{{list.address}}</td>
+           <td style="word-wrap: break-word">{{list.birthday}}</td>
+           <td style="word-wrap: break-word">{{list.doctor}}</td>
+           <td style="word-wrap: break-word">{{list.diagnosis}}</td>
+           <td style="word-wrap: break-word">{{'MKB  10'}}</td>
+        
+           
+         </tr>
      
-      <th scope="col">Ism</th>
-      <th scope="col">Familiya</th>
-      <th scope="col">Sharif</th>
-      <th scope="col">bulim</th>
-      <th scope="col">Adress</th>
-      <th scope="col">Tug'ilgan kun</th>
-      <th scope="col">Doctor</th>
-      <th scope="col">Diagnostika</th>
-     
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="list in searchList " :key="list.id" class="bg-success text-white">
-     <td style="word-wrap: break-word">{{list.number}}</td>
-      <td style="word-wrap: break-word">{{list.firstName}}</td>
-      <td style="word-wrap: break-word">{{list.lastName}}</td>
-      <td style="word-wrap: break-word">{{list.fatherName}}</td>
-      <td style="word-wrap: break-word">{{list.department}}</td>
-      <td style="word-wrap: break-word">{{list.address}}</td>
-      <td style="word-wrap: break-word">{{list.birthday}}</td>
-      <td style="word-wrap: break-word">{{list.doctor}}</td>
-      <td style="word-wrap: break-word">{{list.diagnosis}}</td>
-   
-      
-    </tr>
-
-  </tbody>
-</table>
+       </tbody>
+     </table>
+</div>
+ 
 
 
 
@@ -91,169 +98,203 @@
   </div>
 </div>
 
-
-      <table class="table table-striped table-responsive  mb-0 bg-light shadow-lg " style="table-layout: fixed; width: 100%">
-
-
-<!-- Button trigger modal -->
+<div class=" table-responsive-sm table-responsive w-100 overflow-auto">
+  <table class="table table-responsive table-striped table-hover  mb-0 bg-light shadow-lg" >
 
 
-<!-- Modal -->
-
-
-
-        <thead class="bg-light">
-          <tr class="bg-grayish text-white bg-gradient text-center">
-            <th scope="col">#</th>
-            <th scope="col">Ism</th>
-            <th scope="col">Familiya</th>
-            <th scope="col">Sharif</th>
-             <th scope="col">Address</th>
-              <th scope="col">Bo'lim</th>
-               <th scope="col">Tug'ilgan sanasi </th>
-                <th scope="col">Shifokor</th>
-                 <th scope="col">tashxis</th>
-                   <th scope="col"></th>
-                  
-          </tr>
-        </thead>
-        <div
-          class="spinner-border d-block m-auto text-center"
-          role="status"
-          v-if="load"
-          style="position:absolute; left:50%; transform(translate(-50%,-50%)); top:60%"
-        >
-          <span class="visually-hidden">Loading...</span>
-        </div>
-        <tbody class="text-center">
-          <tr v-for="user in users" :key="user.id">
-            <div class="modal fade bg-white" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel2">Ogohlantirish!</h5>
-        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">Siz haqiqatdan ham ushbu foydalanuvchi ma'lumotlarini o'chirmoqchimisiz?</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"  @click="deleteUser(user.id)">ha</button>
-
-      </div>
-    </div>
-  </div>
+<thead class="bg-light" style="font-size:0.9em;  ">
+  <tr class="bg-grayish text-white bg-gradient " style="text-align: justify">
+    <th scope="col">#</th>
+    <th scope="col">Ism</th>
+    <th scope="col">Familiya</th>
+    <th scope="col">Sharif</th>
+     <th scope="col">Address</th>
+      <th scope="col">Bo'lim</th>
+       <th scope="col">Tug'ilgan sanasi </th>
+        <th scope="col">Shifokor</th>
+         <th scope="col"> Tashxis</th>
+         <th>MKB 10</th>
+           <th scope="col"></th>
+          
+  </tr>
+</thead>
+<div
+  class="spinner-border d-block m-auto text-center "
+  role="status"
+  v-if="load"
+  style="position:absolute; left:50%; transform(translate(-50%,-50%)); top:60%"
+>
+  <span class="visually-hidden">Loading...</span>
 </div>
-            <td class="border " style="word-wrap: break-word;" >
-              {{ user.number}}
-            </td>
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.firstName }}
-            </td>
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.lastName }}
-            </td>
 
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.fatherName }}
-            </td>
+<div style="position:absolute; left:50%; transform(translate(-50%,-50%)); top:60%" class="bg-primary text-white rounded-3 border-3 d-flex justify-content-center align-items-center p-4" v-if="load2">
+  <div class="spinner-border text-white " role="status" >
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+</div>
 
 
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.address }}
-            </td>
 
 
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.department }}
-            </td>
+<tbody class="text-center" style="font-size: 0.9em;">
+  <tr v-for="user in users" :key="user.id">
+    <div class="modal fade bg-white" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel2">Ogohlantirish!</h5>
+<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">Siz haqiqatdan ham ushbu foydalanuvchi ma'lumotlarini o'chirmoqchimisiz?</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"  @click="deleteUser(user.id)">ha</button>
 
-            <td scope="row"  class="px-1  border" style="word-wrap: break-word">
-              {{ user.birthday }}
-            </td>
+</div>
+</div>
+</div>
+</div>
+    <td class="border position-relative fw-bold" style="word-wrap: break-word; text-align: justify;" >
+      {{ user.number}}
+      <span style="position:absolute;bottom:0; right:5px; font-size:9px" class="text-muted opacity-60">{{date.getDate()}}/12/2022</span>
+    </td>
 
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.doctor }}
-            </td>
-            <td scope="row" class="px-1  border" style="word-wrap: break-word">
-              {{ user.diagnosis }}
-            </td>
-          <td scope="row" class="d-flex gap-2 align-items-center  border-0">
-              <router-link
-                :to="{ name: 'edit', params: { id: user.id } }"
-                class="
-                  btn btn-warning
-                  btn-sm
-                  d-flex
-                  justify-content-between
-                  align-items-center
-                  gap-2
-                "
-              >
-                <i class="fas fa-pen"></i></router-link
-              >
+   
+    <td scope="row" class="px-1  border" style="word-wrap: break-word;  text-align: justify">
+      {{ user.firstName }}
 
-              <button class="btn btn-danger btn-sm" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
-                <i
-                  class="far fa-trash-alt text-white rounded-5 bg-danger"
-                  style="cursor: pointer"
-                ></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    </td>
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.lastName }}
+    </td>
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify" >
+      {{ user.fatherName }}
+    </td>
+    
+
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.address }}
+    </td>
+
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.department }}
+    </td>
+
+    <td scope="row"  class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.birthday }}
+    </td>
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.doctor }}
+    </td>
+    <td scope="row" class="px-1 text-start border" style="word-wrap: break-word;  ">
+      {{ user.diagnosis }}
+    </td>
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
+      {{ user.doctor }}
+    </td>
+  <td scope="row" class="d-flex gap-3 align-items-center  border-0 flex-sm-wrap flex-xl-nowrap">
+      <router-link
+        :to="{ name: 'edit', params: { id: user.id } }"
+        class="
+          btn 
+          px-2
+          btn-sm 
+          d-flex
+          justify-content-between
+          align-items-center
+          gap-2
+        "
+        id="pen"
+      >
+        <i class="fas fa-pen "></i></router-link
+      >
+
+      <button class="btn px-2 btn-danger btn-sm" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+        <i
+          class="far fa-trash-alt text-white rounded-5 bg-danger"
+          style="cursor: pointer"
+        ></i>
+      </button>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<div class="badge p-1 p-sm-5 w-100 bg-danger  position-fixed m-auto" style="bottom:10px; right:10px; z-index:44" v-if="info">
+<h3 class="text-wrap">Bu Sahifa mavjud emas! Iltimos ma'lumotlar to'ldirilganligini tekshiring  <i class="fas fa-exclamation-triangle text-warning  fs-3"></i></h3>
+</div>
+
+</div>
+    
+      <paginate
+    :page-count="20"
+    :page-range="3"
+    :margin-pages="2"
+    :click-handler="clickCallback"
+    :prev-text="'qaytish'"
+    :next-text="'keyingisi'"
+    :container-class="'pagination'"
+    :page-class="'page-item'"
+    @click="clickCallback"
+    style="cursor:pointer"
+    v-if="!load"
+    class="mt-3"
+  >
+  </paginate>
     </div>
 
    
   </div>
 </template>
 
-<script setup>
-import axios from "axios";
-import { onMounted } from "vue";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
 
-let router = useRouter();
-let users = ref([]);
-let searchList = ref([])
+<script>
+    import Paginate from 'vuejs-paginate-next';
+  import axios from 'axios';
 
-let load = ref(true);
-let searchText = ref('')
-let searchText2 = ref('')
+ export default {
+  components:{
+    Paginate
+  },
+  data(){
+return{
+users:[],
+searchList:[],
+load:true,
+searchText:'',
+searchText2:'',
+searchShow:false,
+nomer:1,
+number:'',
+load2:false,
+info:false,
+date:new Date(),
 
-let searchShow = ref(false)
-onMounted(async () => {
-  let response = await axios.get("https://itmed.herokuapp.com/api/Discharges/pulmonologiya/20/1", {
-     headers: {
-    'Authorization': `Bearer ${localStorage.getItem('jwt')}`
-  }
-  });
+}
+  },
 
-  response.data.forEach((el) => {
-    load.value = false;
-    users.value = response.data;
-  });
-});
+  methods:{
 
-
-
-
-
-
-let Search = async(e)=>{
+Search(e){
   e.preventDefault();
 
-  let res = await axios.post('https://itmed.herokuapp.com/api/Discharges/Search/pulmonologiya',
+  axios.post('https://itmed.herokuapp.com/api/Discharges/Search/pulmonologiya',
   {
-number:'',
-firstName:searchText.value,
-lastName:searchText2.value,
+number:this.number,
+firstName:this.searchText,
+lastName:this.searchText2,
 fatherName:'',
 address:'',
 department:'',
 birthday:'',
 doctor:'',
-diagnosis:''
+diagnosis:'',
+
 
   },
   
@@ -263,26 +304,26 @@ diagnosis:''
     'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json'
   }
-  })
-
-res.data.forEach(el => {
- searchList.value.push(el)
- searchShow.value = true
+  }).then(res => {
+    res.data.forEach(el => {
+ this.searchList.push(el)
+ this.searchShow = true
 
 })
+  })
 
 
 
-}
+},
 
 
-let tozala = ()=>{
-  searchList.value = []
-}
+tozala(){
+  this.searchList = []
+},
 
-let deleteUser = async (id)=>{
+deleteUser(id){
 
-let response  =  await axios.delete(`https://itmed.herokuapp.com/api/Discharges/${id}`, {
+let response  = axios.delete(`https://itmed.herokuapp.com/api/Discharges/${id}`, {
   headers: {
     'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
     'Content-Type': 'application/json'
@@ -290,19 +331,68 @@ let response  =  await axios.delete(`https://itmed.herokuapp.com/api/Discharges/
 })
 console.log(response)
 
+},
+
+back(){
+  this.$router.go(-1)
+},
+
+async clickCallback (pageNum = 1) {
+
+  console.log(pageNum)
+  this.load2 = true
+  await axios.get(`https://itmed.herokuapp.com/api/Discharges/pulmonologiya/20/${pageNum}`, {
+     headers: {
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+  }
+  }).then(res => {
+   
+    this.load = false
+    this.load2 = false
+   this.users= res.data;
+  }).catch(err => {
+    console.log(err)
+    if(err.name == 'AxiosError'){
+      this.load2 = false
+
+    }
+  })
+
+
+      }
+
+  },
+
+  async mounted(){
+    
+
+this.clickCallback()
+
 }
-
-
-
-const back = () => {
-  router.go(-1);
-};
+  
+ }
 </script>
+
+
 
 <style lang="scss" scoped>
 #first {
+  font-family: 'Thasadith', sans-serif;
 
+}
 
+@media (max-width:600px){
+  #bulim{
+    display: none !important;
+  }
+
+  #pen{
+    display: none !important;
+  }
+
+  #bulimlar{
+    display: none !important;
+  }
 }
 
 .modal-body{
@@ -311,4 +401,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 background-attachment: fixed !important;
 background-size: cover !important;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Thasadith:wght@700&display=swap');
 </style> 

@@ -92,7 +92,7 @@
   </div>
   
   
-        <table class="table table-striped table-responsive  mb-0 bg-light shadow-lg " style="table-layout: fixed; width: 100%">
+        <table class="table table-striped table-responsive  table-hover mb-0 bg-light shadow-lg " style="table-layout: fixed; width: 100%">
   
   
   <!-- Button trigger modal -->

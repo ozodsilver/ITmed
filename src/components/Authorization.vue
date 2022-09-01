@@ -9,7 +9,7 @@
           class="card-img-top w-25 m-auto d-block"
         />
         <div class="card-header ">
-        Samarqand Viloyat bolalar ko'p tarmoqli tibbiyot markazi
+        Samarqand viloyat, bolalar ko'p tarmoqli tibbiyot markazi.
         </div>
         <div class="card-body">
           <form>
@@ -34,8 +34,10 @@
               data-mdb-target="#staticBackdrop"
               id="kirish"
             >
-              kirish
-              <i class="fas fa-sign-in-alt" id="kirish"></i>
+              <span v-if="load">kirish</span>
+              <div class="spinner-border" role="status" v-else-if="!load">
+  <span class="visually-hidden">Loading...</span>
+</div>
             </button>
           </form>
         </div>
@@ -61,11 +63,12 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 let show = ref(false)
 const router = useRouter();
+let load = ref(true)
 
 const Login = async(e) => {
   e.preventDefault();
 
-
+  load.value = false
   let login = document.querySelector("#login").value;
   let password = document.querySelector("#password").value;
 
@@ -77,11 +80,12 @@ if(login !== 'AZIZOV' || password !== 'AZIZOV52'){
 
   let response = await axios.post(
       `https://itmed.herokuapp.com/api/Auth?login=${login}&pass=${password}`)
-
+     
 
 if(response.data){
   localStorage.setItem('jwt', response.data)
   router.push({name:'home'})
+
 }
 
 
@@ -106,6 +110,10 @@ background-size: contain;
  
   background-position: center;
 
+}
+
+.card-header{
+  font-family: 'Palanquin Dark', sans-serif;
 }
 
 #kirish{
@@ -136,4 +144,5 @@ background-size: contain;
     transform: scale(1);
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@600&display=swap');
 </style>
