@@ -2,14 +2,14 @@
   <div id="auth">
     <div class="container">
     
-      <div class="card text-center w-50 m-auto shadow-lg p-3 py-5 border" >
+      <div class="card text-center w-50  m-auto shadow-lg p-3 py-5 border" >
         <img
           src="../assets/logo.jpg"
           alt=""
           class="card-img-top w-25 m-auto d-block"
         />
-        <div class="card-header ">
-        Samarqand viloyat, bolalar ko'p tarmoqli tibbiyot markazi.
+        <div class="card-header text-uppercase" >
+        Samarqand viloyat, <br> bolalar ko'p tarmoqli tibbiyot markazi.
         </div>
         <div class="card-body">
           <form>
@@ -110,6 +110,8 @@ background-size: contain;
  
   background-position: center;
 
+
+ 
 }
 
 .card-header{
@@ -142,6 +144,12 @@ background-size: contain;
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width:768px){
+  .card{
+    width: 100% !important;
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@600&display=swap');

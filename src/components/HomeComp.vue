@@ -2,8 +2,8 @@
   <div id="home">
     <div class="container d-flex p-2 align-items-center" style="height: 100vh">
       <div class="container p-4">
-        <div class="w-100 m-auto shadow-lg h-75 p-5 rounded-8" id="glass">
-          <div class="d-flex justify-content-between align-items-center">
+        <div class="w-100 m-auto shadow-lg p-3 p-md-5 rounded-8" id="glass">
+          <div class="d-flex justify-content-between w-100 align-items-center">
             <h3 class="text-dark fw-bold text-center pt-0 pb-4 text-muted">
               BO'LIMLAR
             </h3>
@@ -289,7 +289,8 @@
                 gap-2
               "
             >
-              <i class="fas fa-arrow-circle-left"></i>log out
+              <i class="fas fa-arrow-circle-left"></i>
+              <span id="log">chiqish</span>
             </button>
             <router-link
               :to="{ name: 'addInfo' }"
@@ -302,11 +303,11 @@
                 gap-3
                 align-items-center
                 my-4
-                w-25
+                w-50
                 d-block
               "
             >
-              ma'lumot qo'shish <i class="fas fa-plus-circle fs-5"></i
+              <span id="qushish">ma'lumot qo'shish</span> <i class="fas fa-plus-circle fs-5"></i
             ></router-link>
           </div>
         </div>
@@ -354,6 +355,36 @@
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.25);
   }
+}
+
+@media (max-width:992px){
+#home{
+  height: 100% !important;
+  .layout{
+    display: grid !important; 
+  grid-template-columns: 1fr 1fr !important; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr !important; 
+  gap: 10px 11px !important; 
+  grid-template-areas: 
+    ". ."
+    ". ."
+    ". ."
+    ". ."
+    ". ." !important; 
+  }
+
+  a{
+    padding: 10px !important;
+  }
+
+  #log{
+    display: none !important;
+  }
+
+  #qushish{
+    display: none !important;
+  }
+}
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");

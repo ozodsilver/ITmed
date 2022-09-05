@@ -77,7 +77,7 @@
            <td style="word-wrap: break-word">{{list.birthday}}</td>
            <td style="word-wrap: break-word">{{list.doctor}}</td>
            <td style="word-wrap: break-word">{{list.diagnosis}}</td>
-           <td style="word-wrap: break-word">{{'MKB  10'}}</td>
+           <td style="word-wrap: break-word">{{list.mkB10}}</td>
         
            
          </tr>
@@ -118,16 +118,16 @@
           
   </tr>
 </thead>
-<div
+<!-- <div
   class="spinner-border d-block m-auto text-center "
   role="status"
   v-if="load"
   style="position:absolute; left:50%; transform(translate(-50%,-50%)); top:60%"
 >
   <span class="visually-hidden">Loading...</span>
-</div>
+</div> -->
 
-<div style="position:absolute; left:50%; transform(translate(-50%,-50%)); top:60%" class="bg-primary text-white rounded-3 border-3 d-flex justify-content-center align-items-center p-4" v-if="load2">
+<div style="position:fixed; left:45%; transform(translate(-50%,-50%)); top:50%" class="bg-primary text-white rounded-3 border-3 d-flex justify-content-center align-items-center p-4" v-if="load2">
   <div class="spinner-border text-white " role="status" >
   <span class="visually-hidden">Loading...</span>
 </div>
@@ -156,7 +156,7 @@
 </div>
     <td class="border position-relative fw-bold" style="word-wrap: break-word; text-align: justify;" >
       {{ user.number}}
-      <span style="position:absolute;bottom:0; right:5px; font-size:9px" class="text-muted opacity-60">{{date.getDate()}}/12/2022</span>
+      <span style="position:absolute;bottom:0; right:5px; font-size:9px" class="text-muted opacity-60">{{user.time}}</span>
     </td>
 
    
@@ -195,7 +195,7 @@
     </td>
 
     <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
-      {{ user.doctor }}
+      {{ user.mkB10 }}
     </td>
   <td scope="row" class="d-flex gap-3 align-items-center  border-0 flex-sm-wrap flex-xl-nowrap">
       <router-link
@@ -273,7 +273,7 @@ nomer:1,
 number:'',
 load2:false,
 info:false,
-date:new Date(),
+
 
 }
   },
@@ -294,7 +294,7 @@ department:'',
 birthday:'',
 doctor:'',
 diagnosis:'',
-
+mkB10:''
 
   },
   
@@ -346,7 +346,7 @@ async clickCallback (pageNum = 1) {
     'Authorization': `Bearer ${localStorage.getItem('jwt')}`
   }
   }).then(res => {
-   
+   console.log(res)
     this.load = false
     this.load2 = false
    this.users= res.data;

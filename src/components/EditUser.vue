@@ -5,7 +5,8 @@
         Tahrirlash <i class="fas fa-pencil-alt fs-4"></i>
       </h1>
 
-      <table class="table table-dark align-middle rounded-9">
+   <div class="table-responsive">
+    <table class="table table-dark align-middle rounded-9">
 <thead >
   <tr >
   <th class="rounded-9">Nomer</th>
@@ -13,10 +14,13 @@
   <th>Familiya</th>
   <th>Otasining ismi</th>
   <th>Address</th>
+  <th>bo'lim</th>
   <th>Tug'ilgan sana</th>
+  
   <th>Shifokor</th>
   <th>Diagnostika</th>
-  <th class="rounded-9">Bo'lim</th>
+
+  <th>MKB10</th>
 
 </tr>
 </thead>
@@ -33,11 +37,16 @@
  <td>{{ nat.birthday }}</td>
  <td>{{ nat.doctor }}</td>
  <td>{{ nat.diagnosis }}</td>
+ <td>{{ nat.mkB10 }}</td>
 </tr>
 </tbody>
 
 
       </table>
+   </div>
+
+
+
       <div class="row">
         <div class="col-6 mt-4">
           <label for="ism">number:</label>
@@ -97,6 +106,20 @@
           />
         </div>
 
+
+        <div class="col-6 mt-4">
+          <label for="">bo'lim</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="bo'lim"
+            v-model="bulim"
+          />
+        </div>
+
+
         <div class="col-6 mt-4">
           <label for="">tugilgan sana</label>
           <input
@@ -132,15 +155,16 @@
           />
         </div>
 
+     
         <div class="col-6 mt-4">
-          <label for="">bo'lim</label>
+          <label for="">MKB10</label>
           <input
             type="text"
             name=""
             id=""
             class="form-control"
-            placeholder="bo'lim"
-            v-model="bulim"
+            placeholder="MKB10"
+            v-model="MKB10"
           />
         </div>
 
@@ -206,6 +230,7 @@ let sana = ref("");
 let doctor = ref("");
 let diagnostica = ref("");
 let bulim = ref("");
+let MKB10 = ref("")
 
 onMounted(async () => {
   let inputs = document.querySelectorAll("input");
@@ -251,6 +276,7 @@ let editUser = async () => {
       doctor: doctor.value,
       diagnosis: diagnostica.value,
       department: bulim.value,
+      mkB10:MKB10.value
     },
     {
       headers: {

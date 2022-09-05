@@ -94,6 +94,10 @@
          kardioxirurgiya
         </option>
 
+
+                
+
+
       </select>
       <div class="row">
 
@@ -194,6 +198,19 @@
             v-model="diagnostica"
           />
         </div>
+
+
+        <div class="col-6 mt-4">
+          <label for="">MKB10</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="MKB10"
+            v-model="MKB10"
+          />
+        </div>
       
       
       
@@ -263,7 +280,8 @@ export default {
       sana:'',
       doctor:'',
       diagnostica:'',
-
+      MKB10:'',
+time:`${new Date().toLocaleDateString()}`  ,
 
       show:false
 
@@ -275,6 +293,7 @@ export default {
 
 mounted(){
 console.log(this.value)
+console.log(this.time)
 },
   methods:{
 
@@ -300,7 +319,9 @@ if(this.value !== null && this.number !== '' && this.ism !== '' && this.familiya
         department:this.value,
         birthday:this.sana,
         doctor:this.doctor,
-        diagnosis:this.diagnostica
+        diagnosis:this.diagnostica,
+        mkB10:this.MKB10,
+        time:this.time
 
       },
       {
