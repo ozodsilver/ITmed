@@ -48,8 +48,7 @@
    </div>
 
 
-
-      <div class="row">
+  <div class="row">
         <div class="col-6 mt-4">
           <label for="ism">number:</label>
           <input
@@ -59,6 +58,7 @@
             class="form-control"
             placeholder="number:"
             v-model="number"
+       
           />
         </div>
 
@@ -229,6 +229,9 @@
           </button>
         </div>
       </div>
+
+
+      
     </div>
     <div class="badge bg-success p-5 w-50 m-auto d-block" v-if="success">
 <h3>Malumotlar tahrirlandi! <i class="fas fa-check-double"></i> </h3>
@@ -279,12 +282,37 @@ onMounted(async () => {
 
  
 
-
   natija.value.push(res.data)
+
+
+  natija.value.forEach((el,index) => {
+    number.value = el.number 
+    ism.value = el.firstName
+    familiya.value = el.lastName
+    sharif.value = el.fatherName
+    address.value = el.address
+    sana.value = el.birthday
+    doctor.value = el.doctor
+    diagnostica.value = el.diagnosis
+    bulim.value = el.department
+    MKB10.value = el.mkB10
+    comeAt.value = el.comeAt
+    leavAt.value = el.leavAt
+  })
+  
+// setTimeout(() => {
+//  inputs.forEach((el,index) => {
+//   console.log(natija.value)
+//   el.value = natija.value[index] 
+//  })
+// }, 1000);
   
 });
 
 console.log(number)
+
+
+
 
 const router = useRouter();
 
