@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <div class="container d-flex p-2 align-items-center" style="height: 105vh">
+    <div class="container d-flex p-2 align-items-center" style="height: 100vh">
       <div class="container p-4">
         <div class="w-100 m-auto shadow-lg p-3 p-md-5 rounded-8" id="glass">
           <div class="d-flex justify-content-between w-100 align-items-center">

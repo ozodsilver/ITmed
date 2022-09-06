@@ -2,41 +2,41 @@
   <div id="auth">
     <div class="container">
     
-      <div class="card text-center w-50  m-auto shadow-lg p-3 py-5 border" >
+      <div class="card border-0  text-center w-50  m-auto shadow-lg p-3 py-5 border" >
         <img
           src="../assets/logo.jpg"
           alt=""
-          class="card-img-top w-25 m-auto d-block"
+          class="card-img-top w-25 mb-4 m-auto d-block"
         />
-        <div class="card-header text-uppercase" >
+        <div class=" text-uppercase text-light fw-bold" >
         Samarqand viloyat, <br> bolalar ko'p tarmoqli tibbiyot markazi.
         </div>
         <div class="card-body">
           <form>
             <input
               type="text"
-              class="form-control mb-3 w-75 m-auto d-block p-2"
+              class="form-control rounded-pill mb-3 w-75 m-auto d-block p-2"
               placeholder="login"
               id="login"
             />
 
             <input
               type="password"
-              class="form-control w-75 m-auto d-block p-2"
+              class="form-control rounded-pill w-75 m-auto d-block p-2"
               placeholder="password"
               id="password"
             />
             <button
-              class="btn btn-primary mt-3 d-block w-75 m-auto d-flex justify-content-center align-items-center gap-2"
+              class="btn btn-primary rounded-pill my-4 d-block  w-75 m-auto "
               @click="Login"
               @keyup.enter="Login"
               data-mdb-toggle=""
               data-mdb-target="#staticBackdrop"
               id="kirish"
             >
-              <span v-if="load">kirish</span>
-              <div class="spinner-border" role="status" v-else-if="!load">
-  <span class="visually-hidden">Loading...</span>
+              <span v-if="load" class="  fw-light opacity-75" >kirish</span>
+              <div class="spinner-border  " style="font-size:10px !important" v-else-if="!load">
+
 </div>
             </button>
           </form>
@@ -68,14 +68,16 @@ let load = ref(true)
 const Login = async(e) => {
   e.preventDefault();
 
-  load.value = false
+
   let login = document.querySelector("#login").value;
   let password = document.querySelector("#password").value;
 
 if(login !== 'AZIZOV' || password !== 'AZIZOV52'){
     show.value = true
-}else{
+    
+}else if(login == 'AZIZOV' || password == 'AZIZOV52'){
   show.value = false
+  load.value = false
 }
 
   let response = await axios.post(
@@ -83,8 +85,10 @@ if(login !== 'AZIZOV' || password !== 'AZIZOV52'){
      
 
 if(response.data){
+  load.value = true
   localStorage.setItem('jwt', response.data)
   router.push({name:'home'})
+
 
 }
 
@@ -101,15 +105,19 @@ if(response.data){
   align-items: center;
   height: 100vh;
 
-background-color: #330055;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%2337105d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233b1e65' cx='50' cy='100' r='50'/%3E%3Cg fill='%233f2a6d' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23423575' cx='50' cy='200' r='50'/%3E%3Cg fill='%2345407d' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23484b85' cx='50' cy='300' r='50'/%3E%3Cg fill='%234a568d' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b6196' cx='50' cy='400' r='50'/%3E%3Cg fill='%234c6d9e' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%234d78a7' cx='50' cy='500' r='50'/%3E%3Cg fill='%234d84af' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%234d8fb8' cx='50' cy='600' r='50'/%3E%3Cg fill='%234b9bc1' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%2349a7c9' cx='50' cy='700' r='50'/%3E%3Cg fill='%2346b3d2' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%2342bfdb' cx='50' cy='800' r='50'/%3E%3Cg fill='%233dcbe4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%2335d7ed' cx='50' cy='900' r='50'/%3E%3Cg fill='%232ae4f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%2317F0FF' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+background: url('../assets/vec.jpg');
 background-attachment: fixed;
-background-size: contain;
+background-size: cover;
+
 
 .card{
  
   background-position: center;
-
+  backdrop-filter: blur(17px) saturate(180%);
+    -webkit-backdrop-filter: blur(17px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.2);
+  
+   box-shadow: outset 0 0 2px white !important;
 
  
 }
@@ -128,7 +136,10 @@ background-size: contain;
 }
 }
 
-
+::placeholder{
+  color: rgba(16, 78, 80, 0.5) !important;
+  padding-left: 10px;
+}
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
