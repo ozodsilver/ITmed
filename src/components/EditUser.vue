@@ -1,6 +1,6 @@
 <template>
   <div id="edit">
-    <div class="container p-3">
+    <div class="container-fluid p-3">
       <h1 class="my-4 text-muted">
         Tahrirlash <i class="fas fa-pencil-alt fs-4"></i>
       </h1>
@@ -16,11 +16,11 @@
   <th>Address</th>
   <th>bo'lim</th>
   <th>Tug'ilgan sana</th>
-  
   <th>Shifokor</th>
   <th>Diagnostika</th>
-
   <th>MKB10</th>
+  <th><i class="fas fa-arrow-down"></i></th>
+  <th><i class="fas fa-arrow-up"></i></th>
 
 </tr>
 </thead>
@@ -38,6 +38,8 @@
  <td>{{ nat.doctor }}</td>
  <td>{{ nat.diagnosis }}</td>
  <td>{{ nat.mkB10 }}</td>
+ <td >{{ nat.comeAt }}</td>
+ <td>{{ nat.leavAt }}</td>
 </tr>
 </tbody>
 
@@ -168,6 +170,33 @@
           />
         </div>
 
+
+        <div class="col-6 mt-4">
+          <label for="">Bemor kelgan vaqt</label>
+          <input
+            type="date"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="Bemor kelgan vaqt"
+            v-model="comeAt"
+          />
+        </div>
+
+
+
+        <div class="col-6 mt-4">
+          <label for="">Bemor ketgan vaqt</label>
+          <input
+            type="date"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="Bemor ketgan vaqt"
+            v-model="leavAt"
+          />
+        </div>
+
         <div class="col-12 d-flex justify-content-between">
           <button
             class="
@@ -230,7 +259,9 @@ let sana = ref("");
 let doctor = ref("");
 let diagnostica = ref("");
 let bulim = ref("");
-let MKB10 = ref("")
+let MKB10 = ref("");
+let comeAt = ref("");
+let leavAt = ref("");
 
 onMounted(async () => {
   let inputs = document.querySelectorAll("input");
@@ -276,7 +307,9 @@ let editUser = async () => {
       doctor: doctor.value,
       diagnosis: diagnostica.value,
       department: bulim.value,
-      mkB10:MKB10.value
+      mkB10:MKB10.value,
+      comeAt:comeAt.value,
+      leavAt:leavAt.value
     },
     {
       headers: {

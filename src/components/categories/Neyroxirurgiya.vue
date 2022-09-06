@@ -28,7 +28,7 @@
       </form>
   
  
-        <h1 class=" badge bg-grayish py-2 mt-2   d-flex align-items-center" id="bulim">Neyroxirurgiya</h1>
+        <h1 class=" badge bg-grayish py-2 mt-2   d-flex align-items-center" id="bulim"> Neyroxirurgiya</h1>
         <div class="d-flex justify-content-center" v-if="load"></div>
       </div>
 
@@ -60,10 +60,10 @@
            <th scope="col">Adress</th>
            <th scope="col">Tug'ilgan kun</th>
            <th scope="col">Doctor</th>
-         
            <th scope="col">Diagnostika</th>
            <th scope="col">MKB 10</th>
-          
+           <th scope="col"><i class="fas fa-arrow-down"></i></th>
+           <th scope="col"><i class="fas fa-arrow-up"></i></th>
          </tr>
        </thead>
        <tbody>
@@ -78,7 +78,8 @@
            <td style="word-wrap: break-word">{{list.doctor}}</td>
            <td style="word-wrap: break-word">{{list.diagnosis}}</td>
            <td style="word-wrap: break-word">{{list.mkB10}}</td>
-        
+           <td style="word-wrap: break-word">{{list.comeAt}}</td>
+           <td style="word-wrap: break-word">{{list.leavAt}}</td>
            
          </tr>
      
@@ -114,6 +115,8 @@
         <th scope="col">Shifokor</th>
          <th scope="col"> Tashxis</th>
          <th>MKB 10</th>
+         <th><i class="fas fa-arrow-down text-light"></i></th>
+         <th><i class="fas fa-arrow-up text-warning"></i></th>
            <th scope="col"></th>
           
   </tr>
@@ -197,6 +200,16 @@
     <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify">
       {{ user.mkB10 }}
     </td>
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify; font-size:10px" >
+      {{ user.comeAt }}
+    </td>
+
+
+    <td scope="row" class="px-1  border" style="word-wrap: break-word; text-align: justify; font-size:10px">
+      {{ user.leavAt }}
+    </td>
+
   <td scope="row" class="d-flex gap-3 align-items-center  border-0 flex-sm-wrap flex-xl-nowrap">
       <router-link
         :to="{ name: 'edit', params: { id: user.id } }"

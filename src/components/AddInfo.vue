@@ -211,6 +211,31 @@
             v-model="MKB10"
           />
         </div>
+
+        <div class="col-6 mt-4">
+          <label for="">Bemor kelgan vaqt</label>
+          <input
+            type="date"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="Bemor kelgan vaqt"
+            v-model="comeAt"
+          />
+        </div>
+
+        
+        <div class="col-6 mt-4">
+          <label for="">Bemor ketgan vaqt</label>
+          <input
+            type="date"
+            name=""
+            id=""
+            class="form-control"
+            placeholder="Bemor ketgan vaqt"
+            v-model="leaveAt"
+          />
+        </div>
       
       
       
@@ -281,7 +306,8 @@ export default {
       doctor:'',
       diagnostica:'',
       MKB10:'',
-time:`${new Date().toLocaleDateString()}`  ,
+comeAt:'',
+leaveAt:'',
 
       show:false
 
@@ -293,7 +319,7 @@ time:`${new Date().toLocaleDateString()}`  ,
 
 mounted(){
 console.log(this.value)
-console.log(this.time)
+console.log(this.comeAt)
 },
   methods:{
 
@@ -321,7 +347,8 @@ if(this.value !== null && this.number !== '' && this.ism !== '' && this.familiya
         doctor:this.doctor,
         diagnosis:this.diagnostica,
         mkB10:this.MKB10,
-        time:this.time
+      comeAt:this.comeAt,
+      leavAt:this.leaveAt
 
       },
       {
@@ -333,16 +360,6 @@ if(this.value !== null && this.number !== '' && this.ism !== '' && this.familiya
       }
       ).then(el => {
       
-        // this.value = null
-        // this.number = ''
-        // this.ism = ''
-        // this.familiya = ''
-        // this.sharif = ''
-        // this.address = ''
-        // this.bulim = ''
-        // this.sana = ''
-        // this.doctor = ''
-        // this.diagnostica = ''
 
         setTimeout(() => {
           this.show = true
@@ -359,9 +376,6 @@ if(this.value !== null && this.number !== '' && this.ism !== '' && this.familiya
 }else{
   alert("bo'sh malumot maydoni mavjud, tekshiring!")
 }
-
-
-   
 
     }
   } 
