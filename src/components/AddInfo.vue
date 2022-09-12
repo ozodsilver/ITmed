@@ -1,51 +1,51 @@
 <template>
   <div id="post">
     <div class="container p-3">
-      <h1 class="my-4 text-muted">bo'limni tanlang</h1>
+      <h1 class="my-4 text-muted">Bo'limni tanlang</h1>
       <select class="form-control"  v-model="value" @change="val">
         <option value="pulmonologiya">
-         pulmonologiya
+         Pulmonologiya
         </option>
          <option value="allergologiya">
-         allergologiya
+         Allergologiya
         </option>
          <option value="gematologiya">
-         gematologiya
+         Gematologiya
         </option>
 
          <option value="nevrologiya">
-         nevrologiya
+         Nevrologiya
         </option>
 
          <option value="kardiologiya">
-         kardiologiya
+         Kardiologiya
         </option>
 
          <option value="gastrointerologiya">
-         gastrointerologiya
+         Gastrointerologiya
         </option>
 
          <option value="chaqaloqlar">
-         chaqaloqlar poltologiyasi bo'limi
+         Chaqaloqlar poltologiyasi bo'limi
         </option>
          <option value="chala">
-         chala tug'ilgan chaqaloqlar bo'limi
+         Chala tug'ilgan chaqaloqlar bo'limi
         </option>
          <option value="neonotal">
-         neonatal reanimatsiya
+         Neonatal reanimatsiya
         </option>
          <option value="reanimatsiya">
-         reanimatsiya
+         Reanimatsiya
         </option>
          <option value="erta">
-         erta yosh bolalar patologiyasi
+         Erta yosh bolalar patologiyasi
         </option>
          <option value="otoloringologiya">
-         otoloringologiya
+         Otoloringologiya
         </option>
 
          <option value="neyroxirurgiya">
-        neyroxirurgiya
+        Neyroxirurgiya
         </option>
 
 
@@ -62,7 +62,7 @@
 
 
          <option value="ginekologiya">
-         ginekologiya
+         Ginekologiya
         </option>
 
 
@@ -75,23 +75,23 @@
 
 
          <option value="urologiya">
-         urologiya
+         Urologiya
         </option>
 
           <option value="neonotalX">
-         neonotal xirurgiya
+         Neonotal xirurgiya
         </option>
 
           <option value="ortopediya1">
-         ortopediya - 1
+         Ortopediya - 1
         </option>
 
           <option value="ortopediya2">
-         ortopediya - 2
+         Ortopediya - 2
         </option>
         
  <option value="kardioxirurgiya">
-         kardioxirurgiya
+         Kardioxirurgiya
         </option>
 
 
@@ -103,7 +103,7 @@
 
 
    <div class="col-6 mt-4">
-          <label for="ism">number:</label>
+          <label for="ism">Nomer:</label>
           <input
             type="text"
             name=""
@@ -129,7 +129,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">familiya:</label>
+          <label for="">Familiya:</label>
           <input
             type="text"
             name=""
@@ -141,7 +141,7 @@
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">otasining ismi:</label>
+          <label for="ism">Otasining ismi:</label>
           <input
             type="text"
             name=""
@@ -152,7 +152,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">address</label>
+          <label for="">Address</label>
           <input
             type="text"
             name=""
@@ -165,7 +165,7 @@
 
     
         <div class="col-6 mt-4">
-          <label for="">tugilgan sana</label>
+          <label for="">Tug'ilgan sana</label>
           <input
             type="text"
             name=""
@@ -177,7 +177,7 @@
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">doctor</label>
+          <label for="ism">Doctor</label>
           <input
             type="text"
             name=""
@@ -188,7 +188,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">diagnostica</label>
+          <label for="">Diagnostika</label>
           <input
             type="text"
             name=""
@@ -253,7 +253,7 @@
             "
             @click="back"
           >
-            bo'limlar <i class="fas fa-angle-left"></i>
+            Bo'limlar <i class="fas fa-angle-left"></i>
           </button>
           <button
             class="
@@ -269,7 +269,7 @@
 
             @click="addPost"
           >
-            joylash <i class="fas fa-plus-circle"></i>
+            Joylash <i class="fas fa-plus-circle"></i>
           </button>
         </div>
       </div>

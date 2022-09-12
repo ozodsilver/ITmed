@@ -14,7 +14,7 @@
   <th>Familiya</th>
   <th>Otasining ismi</th>
   <th>Address</th>
-  <th>bo'lim</th>
+  <th>Bo'lim</th>
   <th>Tug'ilgan sana</th>
   <th>Shifokor</th>
   <th>Diagnostika</th>
@@ -50,7 +50,7 @@
 
   <div class="row">
         <div class="col-6 mt-4">
-          <label for="ism">number:</label>
+          <label for="ism">Nomer:</label>
           <input
             type="text"
             name=""
@@ -74,7 +74,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">familiya:</label>
+          <label for="">Familiya:</label>
           <input
             type="text"
             name=""
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">otasining ismi:</label>
+          <label for="ism">Otasining ismi:</label>
           <input
             type="text"
             name=""
@@ -97,7 +97,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">address</label>
+          <label for="">Address</label>
           <input
             type="text"
             name=""
@@ -110,7 +110,7 @@
 
 
         <div class="col-6 mt-4">
-          <label for="">bo'lim</label>
+          <label for="">Bo'lim</label>
           <input
             type="text"
             name=""
@@ -123,7 +123,7 @@
 
 
         <div class="col-6 mt-4">
-          <label for="">tugilgan sana</label>
+          <label for="">Tug'ilgan sana</label>
           <input
             type="text"
             name=""
@@ -135,7 +135,7 @@
         </div>
 
         <div class="col-6 mt-4">
-          <label for="ism">doctor</label>
+          <label for="ism">Doktor</label>
           <input
             type="text"
             name=""
@@ -146,7 +146,7 @@
           />
         </div>
         <div class="col-6 mt-4">
-          <label for="">diagnostica</label>
+          <label for="">Diagnostika</label>
           <input
             type="text"
             name=""
